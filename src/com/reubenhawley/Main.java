@@ -4,21 +4,41 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        Oefening drie = new Oefening();
+        Drie oefening = new Drie();
+        Vier oefening2 = new Vier();
+        Oefening oefening5 = new Oefening();
         System.out.println("Exercise 3A");
-        drie.drieAWhile(8);
+        oefening.AWhile(8);
 
         System.out.println("Exercise 3C");
-        drie.drieCWhile(8, 20);
+        oefening.CWhile(8, 20);
         System.out.println("Exercise 3D");
-        drie.drieDWhile(8);
+        oefening.DWhile(8);
         System.out.println("Exercise 3G");
-        drie.drieGWhile(4);
+        oefening.GWhile(4);
         System.out.println("Exercise 3H");
-        drie.drieHWhile(6);
+        oefening.HWhile(6);
         System.out.println("Exercise 3A: FOR");
-        drie.drieAFor(6);
+        oefening.AFor(6);
         System.out.println("Exercise 3C: FOR");
-        drie.drieCFor(6,3);
+        oefening.CFor(6,3);
+        System.out.println("Exercise 3D: FOR");
+        oefening.DFor(6);
+        System.out.println("Exercise 3G: FOR");
+        oefening.GFor(6);
+        System.out.println("Exercise 3H: FOR");
+        oefening.HFor(7);
+        System.out.println("Exercise 4B:");
+        oefening2.B("Reuben");
+        System.out.println("Exercise 4C:");
+        oefening2.C("Arjan","Loes");
+        System.out.println("Exercise 5A:");
+        oefening5.vijfA();
+        System.out.println("Exercise 5B:");
+        oefening5.vijfB();
+        System.out.println("Exercise 5C:");
+        oefening5.vijfC();
+        System.out.println("Exercise 6:");
+        oefening5.Zes();
     }
 }
