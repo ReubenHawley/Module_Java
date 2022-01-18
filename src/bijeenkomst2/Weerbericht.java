@@ -1,5 +1,8 @@
 package bijeenkomst2;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Weerbericht {
     private String windRichting;
     private int windkracht;
@@ -7,6 +10,8 @@ public class Weerbericht {
     private boolean bewolking;
     private boolean neerslag;
     private boolean zon;
+    private LocalDate datum;
+    private DateTimeFormatter datumFormat;
 
     public double getTemperatuur() {
         return this.temperatuur;
@@ -53,7 +58,14 @@ public class Weerbericht {
 
     Weerbericht(double temperatuur, int windkracht, String windRichting) {
         this(temperatuur, windkracht, windRichting, false, false, true);
+        this.datum = LocalDate.now(); // vandaag
+        this.datumFormat = DateTimeFormatter.ofPattern("eeee"); // alleen de dag
     }
+
+    public String getDagVanDeWeek() {
+        return datum.format(datumFormat);
+    }
+
 
     Weerbericht(double temperatuur, int windkracht, String windRichting, boolean zon, boolean bewolking, boolean neerslag) {
         setTemperatuur(temperatuur);
@@ -62,6 +74,8 @@ public class Weerbericht {
         setZon(zon);
         setBewolking(bewolking);
         setNeerslag(neerslag);
+        this.datum = LocalDate.now(); // vandaag
+        this.datumFormat = DateTimeFormatter.ofPattern("eeee"); // alleen de dag
     }
 
     @Override
@@ -69,7 +83,7 @@ public class Weerbericht {
         //Weerbericht - temperatuur: 5.7, wind: 7 NO, zon
         //Weerbericht - temperatuur: 5.7, wind: 7 NO, bewolking, zon
         //Weerbericht - temperatuur: 5.7, wind: 7 NO, neerslag, bewolking, zon
-        String weerbericht = ("Weerbericht - temperatuur: " + temperatuur + " ,wind: " + windkracht + " " + windRichting);
+        String weerbericht = ("Weerbericht "+ getDagVanDeWeek()+ " - temperatuur: " + temperatuur + " ,wind: " + windkracht + " " + windRichting);
         if (neerslag) {
             weerbericht += " ,neerslag";
         }
