@@ -4,6 +4,7 @@ public class Weerbericht {
     private String windRichting;
     private int windkracht;
     private double temperatuur;
+    private boolean bewolking;
     private boolean neerslag;
     private boolean zon;
 
@@ -17,6 +18,10 @@ public class Weerbericht {
 
     public String getWindrichting() {
         return this.windRichting;
+    }
+
+    public void setBewolking(boolean bewolking) {
+        this.bewolking = bewolking;
     }
 
     public void setZon(boolean zon) {
@@ -45,11 +50,38 @@ public class Weerbericht {
         this.windRichting = windRichting;
     }
 
+    @Override
+    public String toString() {
+        //Weerbericht - temperatuur: 5.7, wind: 7 NO, zon
+        //Weerbericht - temperatuur: 5.7, wind: 7 NO, bewolking, zon
+        //Weerbericht - temperatuur: 5.7, wind: 7 NO, neerslag, bewolking, zon
+        String weerbericht = ("Weerbericht - temperatuur: " + temperatuur + " ,wind: " + windkracht + " " + windRichting);
+        if (neerslag) {
+            weerbericht += " ,neerslag";
+        }
+        if (bewolking) {
+            weerbericht += " ,bewolking";
+        }
+        if (zon) {
+            weerbericht += " ,zon";
+        }
+        return weerbericht;
+    }
+
     public static void main(String[] args) {
+        //opdracht A
         Weerbericht weerbericht = new Weerbericht(5.7, 7, "NO");
         System.out.println(weerbericht.getTemperatuur());
         System.out.println(weerbericht.getWindkracht());
         System.out.println(weerbericht.getWindrichting());
+
+        //opdracht B
+        weerbericht.setZon(true);
+        System.out.println(weerbericht);
+        weerbericht.setBewolking(true);
+        System.out.println(weerbericht);
+        weerbericht.setNeerslag(true);
+        System.out.println(weerbericht);
 
     }
 }
