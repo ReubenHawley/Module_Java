@@ -18,17 +18,23 @@ public class Hemellichaam {
         this.type = type;
     }
 
-    public void setTemperatuur(int tempMin) {
-        this.tempMin = tempMin;
+    public void setTemperatuur(int temp) {
+        this.tempMin = temp;
+        this.tempMax = temp;
     }
 
-    public void setTemperatuur(int temp, int tempMax) {
-        this.tempMin = temp;
+    public void setTemperatuur(int tempMin, int tempMax) {
+        this.tempMin = tempMin;
         this.tempMax = tempMax;
     }
 
     private void printTemperatuur() {
-        System.out.println("Het is minimaal "+tempMin+" graden, en maximaal "+ tempMax+" graden\n");
+        if (tempMax == tempMin) {
+            System.out.println("Het temperatuur is ongeveer " + tempMin + " graden\n");
+
+        } else {
+            System.out.println("Het is minimaal " + tempMin + " graden, en maximaal " + tempMax + " graden\n");
+        }
     }
 
     Hemellichaam(String naam, String type) {
@@ -66,9 +72,13 @@ public class Hemellichaam {
         hl4.setTemperatuur(-89, 58);
         hl4.printTemperatuur();
 
+        //opdracht G
+        Hemellichaam hl5 = new Hemellichaam("Antares", "ster");
+        hl5.setTemperatuur(3204);
+        hl5.printTemperatuur();
+
 
     }
-
 
 
 }
