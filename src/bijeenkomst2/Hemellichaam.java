@@ -15,6 +15,10 @@ public class Hemellichaam {
         this.naam = naam;
         this.type = type;
     }
+    Hemellichaam(String naam){
+        this.naam = naam;
+        this.type = "onbekend";
+    }
 
     @Override
     public String toString() {
