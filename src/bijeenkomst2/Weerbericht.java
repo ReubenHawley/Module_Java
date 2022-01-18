@@ -51,9 +51,7 @@ public class Weerbericht {
     }
 
     Weerbericht(double temperatuur, int windkracht, String windRichting,boolean zon, boolean bewolking, boolean neerslag) {
-        this.temperatuur = temperatuur;
-        this.windkracht = windkracht;
-        this.windRichting = windRichting;
+        new Weerbericht(temperatuur,windkracht,windRichting);
         this.zon = zon;
         this.bewolking = bewolking;
         this.neerslag = neerslag;
