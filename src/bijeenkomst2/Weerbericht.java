@@ -22,6 +22,10 @@ public class Weerbericht {
 
     public void setBewolking(boolean bewolking) {
         this.bewolking = bewolking;
+        if (!bewolking) {
+            setZon(true);
+            setNeerslag(false);
+        }
     }
 
     public void setZon(boolean zon) {
@@ -30,6 +34,9 @@ public class Weerbericht {
 
     public void setNeerslag(boolean neerslag) {
         this.neerslag = neerslag;
+        if (neerslag) {
+            setBewolking(true);
+        }
     }
 
     public void setTemperatuur(double temperatuur) {
@@ -45,16 +52,16 @@ public class Weerbericht {
     }
 
     Weerbericht(double temperatuur, int windkracht, String windRichting) {
-        this.temperatuur = temperatuur;
-        this.windkracht = windkracht;
-        this.windRichting = windRichting;
+        this(temperatuur, windkracht, windRichting, false, false, true);
     }
 
-    Weerbericht(double temperatuur, int windkracht, String windRichting,boolean zon, boolean bewolking, boolean neerslag) {
-        new Weerbericht(temperatuur,windkracht,windRichting);
-        this.zon = zon;
-        this.bewolking = bewolking;
-        this.neerslag = neerslag;
+    Weerbericht(double temperatuur, int windkracht, String windRichting, boolean zon, boolean bewolking, boolean neerslag) {
+        setTemperatuur(temperatuur);
+        setWindKracht(windkracht);
+        setWindRichting(windRichting);
+        setZon(zon);
+        setBewolking(bewolking);
+        setNeerslag(neerslag);
     }
 
     @Override
@@ -77,21 +84,31 @@ public class Weerbericht {
 
     public static void main(String[] args) {
         //opdracht A
-        Weerbericht weerbericht = new Weerbericht(5.7, 7, "NO");
-        System.out.println(weerbericht.getTemperatuur());
-        System.out.println(weerbericht.getWindkracht());
-        System.out.println(weerbericht.getWindrichting());
-
-        //opdracht B
-        weerbericht.setZon(true);
-        System.out.println(weerbericht);
-        weerbericht.setBewolking(true);
-        System.out.println(weerbericht);
-        weerbericht.setNeerslag(true);
-        System.out.println(weerbericht);
+//        Weerbericht weerbericht = new Weerbericht(5.7, 7, "NO");
+//        System.out.println(weerbericht.getTemperatuur());
+//        System.out.println(weerbericht.getWindkracht());
+//        System.out.println(weerbericht.getWindrichting());
+//
+//        //opdracht B
+//        System.out.println(weerbericht);
+//        weerbericht.setZon(true);
+//        System.out.println(weerbericht);
+//        weerbericht.setBewolking(true);
+//        System.out.println(weerbericht);
+//        weerbericht.setNeerslag(true);
+//        System.out.println(weerbericht);
 
         //opdracht C
-        Weerbericht weerbericht2 = new Weerbericht(5.7, 7, "NO",true,true,true);
+        Weerbericht weerbericht2 = new Weerbericht(5.7, 7, "NO", true, false, false);
         System.out.println(weerbericht2);
+
+        //opdracht e
+        // geen bewolking, wel neerslag, geen zon: dat kan niet,
+        // dus geen bewolking? dan ook geen neerslag en wel zon
+        Weerbericht weerbericht3 = new Weerbericht(4.0, 9, "NO", false, true, false);
+        System.out.println(weerbericht3);
+        // geen wolken? dan dus ook geen neerslag en wel zon
+        weerbericht3.setBewolking(false);
+        System.out.println(weerbericht3);
     }
 }
