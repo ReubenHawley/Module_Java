@@ -10,4 +10,7 @@ public class Cirkel {
     public double berekenOmtrek(double straal) {
         return 2* straal * Math.PI;
     }
+    public double berekenOppervlakte(double straal){
+        return Math.PI*Math.pow(straal,2);
+    }
 }
