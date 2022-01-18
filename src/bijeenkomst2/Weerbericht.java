@@ -50,6 +50,15 @@ public class Weerbericht {
         this.windRichting = windRichting;
     }
 
+    Weerbericht(double temperatuur, int windkracht, String windRichting,boolean zon, boolean bewolking, boolean neerslag) {
+        this.temperatuur = temperatuur;
+        this.windkracht = windkracht;
+        this.windRichting = windRichting;
+        this.zon = zon;
+        this.bewolking = bewolking;
+        this.neerslag = neerslag;
+    }
+
     @Override
     public String toString() {
         //Weerbericht - temperatuur: 5.7, wind: 7 NO, zon
@@ -83,5 +92,8 @@ public class Weerbericht {
         weerbericht.setNeerslag(true);
         System.out.println(weerbericht);
 
+        //opdracht C
+        Weerbericht weerbericht2 = new Weerbericht(5.7, 7, "NO",true,true,true);
+        System.out.println(weerbericht2);
     }
 }
