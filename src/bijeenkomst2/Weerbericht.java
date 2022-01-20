@@ -2,6 +2,7 @@ package bijeenkomst2;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 public class Weerbericht {
     private String windRichting;
@@ -56,14 +57,21 @@ public class Weerbericht {
         this.windRichting = windRichting;
     }
 
+    public String getDagVanDeWeek() {
+        return datum.format(datumFormat);
+    }
+
+    public void verhoogDag() {
+        this.datum = datum.plusDays(1);
+    }
+
+    public void verhoogDag(int dagen) {
+        this.datum =datum.plusDays(dagen);
+    }
     Weerbericht(double temperatuur, int windkracht, String windRichting) {
         this(temperatuur, windkracht, windRichting, false, false, true);
         this.datum = LocalDate.now(); // vandaag
         this.datumFormat = DateTimeFormatter.ofPattern("eeee"); // alleen de dag
-    }
-
-    public String getDagVanDeWeek() {
-        return datum.format(datumFormat);
     }
 
 
@@ -83,7 +91,7 @@ public class Weerbericht {
         //Weerbericht - temperatuur: 5.7, wind: 7 NO, zon
         //Weerbericht - temperatuur: 5.7, wind: 7 NO, bewolking, zon
         //Weerbericht - temperatuur: 5.7, wind: 7 NO, neerslag, bewolking, zon
-        String weerbericht = ("Weerbericht "+ getDagVanDeWeek()+ " - temperatuur: " + temperatuur + " ,wind: " + windkracht + " " + windRichting);
+        String weerbericht = ("Weerbericht " + getDagVanDeWeek() + " - temperatuur: " + temperatuur + " ,wind: " + windkracht + " " + windRichting);
         if (neerslag) {
             weerbericht += " ,neerslag";
         }
@@ -98,7 +106,7 @@ public class Weerbericht {
 
     public static void main(String[] args) {
         //opdracht A
-//        Weerbericht weerbericht = new Weerbericht(5.7, 7, "NO");
+        Weerbericht weerbericht = new Weerbericht(5.7, 7, "NO");
 //        System.out.println(weerbericht.getTemperatuur());
 //        System.out.println(weerbericht.getWindkracht());
 //        System.out.println(weerbericht.getWindrichting());
@@ -124,5 +132,12 @@ public class Weerbericht {
         // geen wolken? dan dus ook geen neerslag en wel zon
         weerbericht3.setBewolking(false);
         System.out.println(weerbericht3);
+
+        // opdracht 4B
+        System.out.println(weerbericht);
+        weerbericht.verhoogDag();
+        System.out.println(weerbericht);
+        weerbericht.verhoogDag(2);
+        System.out.println(weerbericht);
     }
 }
