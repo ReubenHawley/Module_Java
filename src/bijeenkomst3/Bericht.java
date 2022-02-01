@@ -4,11 +4,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Bericht {
-    private String afzender;
+    private Gebruiker afzender;
     private String bericht;
     private LocalDateTime datum;
 
-    public Bericht(String afzender, String bericht) {
+    public Bericht(Gebruiker afzender, String bericht) {
         this.afzender = afzender;
         this.bericht = bericht;
         this.datum = LocalDateTime.now();
@@ -30,11 +30,11 @@ public class Bericht {
         this.bericht = bericht;
     }
 
-    public String getAfzender() {
+    public Gebruiker getAfzender() {
         return this.afzender;
     }
 
-    public void setAfzender(String afzender) {
+    public void setAfzender(Gebruiker afzender) {
         this.afzender = afzender;
     }
 
@@ -55,15 +55,18 @@ public class Bericht {
         if (aantal == berichten.length) {
             System.out.println("Er zijn " + berichten.length + " berichten");
         }
+
+        Gebruiker reuben = new Gebruiker("Reuben",31);
+        Gebruiker jolanda = new Gebruiker("Jolanda",39);
         for (int i = 0; i < berichten.length; i++) {
             System.out.println(berichten[i]);
         }
-        Bericht bericht1 = new Bericht("reuben", berichten[0]);
-        Bericht bericht2 = new Bericht("jolanda", berichten[1]);
-        Bericht bericht3 = new Bericht("reuben", berichten[2]);
-        Bericht bericht4 = new Bericht("jolanda", berichten[3]);
-        Bericht bericht5 = new Bericht("reuben", berichten[4]);
-        Bericht bericht6 = new Bericht("jolanda", berichten[5]);
+        Bericht bericht1 = new Bericht(reuben, berichten[0]);
+        Bericht bericht2 = new Bericht(jolanda, berichten[1]);
+        Bericht bericht3 = new Bericht(reuben, berichten[2]);
+        Bericht bericht4 = new Bericht(jolanda, berichten[3]);
+        Bericht bericht5 = new Bericht(reuben, berichten[4]);
+        Bericht bericht6 = new Bericht(jolanda, berichten[5]);
         System.out.println(bericht1);
         ArrayList<Bericht> berichtenLijst = new ArrayList<Bericht>();
         berichtenLijst.add(bericht1);
