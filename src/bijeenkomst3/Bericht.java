@@ -1,8 +1,47 @@
 package bijeenkomst3;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Bericht {
+    private String afzender;
+    private String bericht;
+    private LocalDateTime datum;
+
+    public Bericht(String afzender, String bericht) {
+        this.afzender = afzender;
+        this.bericht = bericht;
+        this.datum = LocalDateTime.now();
+    }
+
+    public LocalDateTime getDatum() {
+        return this.datum;
+    }
+
+    public void setDatum(LocalDateTime datum) {
+        this.datum = datum;
+    }
+
+    public String getBericht() {
+        return this.bericht;
+    }
+
+    public void setBericht(String bericht) {
+        this.bericht = bericht;
+    }
+
+    public String getAfzender() {
+        return this.afzender;
+    }
+
+    public void setAfzender(String afzender) {
+        this.afzender = afzender;
+    }
+
+    @Override
+    public String toString() {
+        return afzender + " (" + datum + ") " + bericht + '\n';
+    }
 
     public static void main(String[] args) {
         int aantal = 6;
@@ -16,8 +55,25 @@ public class Bericht {
         if (aantal == berichten.length) {
             System.out.println("Er zijn " + berichten.length + " berichten");
         }
-        for (int i=0;i<berichten.length;i++){
+        for (int i = 0; i < berichten.length; i++) {
             System.out.println(berichten[i]);
+        }
+        Bericht bericht1 = new Bericht("reuben", berichten[0]);
+        Bericht bericht2 = new Bericht("jolanda", berichten[1]);
+        Bericht bericht3 = new Bericht("reuben", berichten[2]);
+        Bericht bericht4 = new Bericht("jolanda", berichten[3]);
+        Bericht bericht5 = new Bericht("reuben", berichten[4]);
+        Bericht bericht6 = new Bericht("jolanda", berichten[5]);
+        System.out.println(bericht1);
+        ArrayList<Bericht> berichtenLijst = new ArrayList<Bericht>();
+        berichtenLijst.add(bericht1);
+        berichtenLijst.add(bericht2);
+        berichtenLijst.add(bericht3);
+        berichtenLijst.add(bericht4);
+        berichtenLijst.add(bericht5);
+        berichtenLijst.add(bericht6);
+        for (Bericht bericht:berichtenLijst) {
+            System.out.println(bericht);
         }
     }
 }
