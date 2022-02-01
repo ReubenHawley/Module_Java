@@ -78,5 +78,13 @@ public class Bericht {
         for (Bericht bericht:berichtenLijst) {
             System.out.println(bericht);
         }
+
+        Chat chat = new Chat("prive");
+        for (Bericht bericht:berichtenLijst) {
+            chat.voegToe(bericht);
+        }
+        chat.printBerichtenVan(reuben);
+        ArrayList<Bericht> hoi = chat.ZoekBerichten("Hoi");
+        System.out.println(hoi.toString());
     }
 }
