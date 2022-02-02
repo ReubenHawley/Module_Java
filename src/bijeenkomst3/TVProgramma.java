@@ -1,9 +1,14 @@
 package bijeenkomst3;
 
-public class TVProgramma {
+public abstract class  TVProgramma {
     private String titel;
     private int tijdsDuur;
     private String zender;
+
+    public TVProgramma(String titel, int tijdsDuur) {
+        this.titel = titel;
+        this.tijdsDuur = tijdsDuur;
+    }
 
     public String getZender() {
         return this.zender;
@@ -11,11 +16,6 @@ public class TVProgramma {
 
     public void setZender(String zender) {
         this.zender = zender;
-    }
-
-    public TVProgramma(String titel, int tijdsDuur) {
-        this.titel = titel;
-        this.tijdsDuur = tijdsDuur;
     }
 
     public int getTijdsDuur() {
@@ -32,12 +32,5 @@ public class TVProgramma {
     public void setTitel(String titel) {
         this.titel = titel;
     }
-    public void printProgramma(){
 
-    }
-
-    public static void main(String[] args) {
-
-
-    }
 }

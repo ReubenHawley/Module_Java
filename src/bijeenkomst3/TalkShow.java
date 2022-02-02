@@ -4,8 +4,10 @@ public class TalkShow extends TVProgramma{
     private String presentator;
     private String onderwerp;
 
-    public TalkShow(String titel, int tijdsDuur) {
+    public TalkShow(String titel, int tijdsDuur,String presentator, String onderwerp) {
         super(titel, tijdsDuur);
+        this.onderwerp = onderwerp;
+        this.presentator = presentator;
     }
 
     public String getOnderwerp() {

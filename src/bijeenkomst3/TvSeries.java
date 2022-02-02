@@ -5,8 +5,11 @@ public class TvSeries extends TVProgramma{
     private int afleveringsnummer;
 
 
-    public TvSeries(String titel, int tijdsDuur) {
+    public TvSeries(String titel, int tijdsDuur, int afleveringsnummer,String regisseur) {
         super(titel, tijdsDuur);
+        this.afleveringsnummer = afleveringsnummer;
+        this.regisseur = regisseur;
+
     }
 
     public int getAfleveringsNummer() {
