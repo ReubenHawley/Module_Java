@@ -48,6 +48,7 @@ public class Filmtest {
         actie1.print();
 
         actie2.print();
+        scene1.print();
     }
 }
 

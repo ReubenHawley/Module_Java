@@ -23,4 +23,15 @@ public class Scene {
         Actie actie = new Actie(rol, tekst, gedrag);
         acties.add(actie);
     }
+
+    public void print() {
+        try {
+            System.out.println(" --- " + beschrijving + " ---");
+            for (Actie actie : acties) {
+                actie.print();
+            }
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Actie array is empty");
+        }
+    }
 }
