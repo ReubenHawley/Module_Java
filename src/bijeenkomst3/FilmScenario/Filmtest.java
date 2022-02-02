@@ -45,10 +45,15 @@ public class Filmtest {
 
         Actie actie2 = new Actie(conducteur, "hallo", "draait zich om");
 
+        System.out.println("Opdracht A");
         actie1.print();
 
         actie2.print();
+
+        System.out.println("Opdracht B");
         scene1.print();
+        System.out.println("Opdracht C");
+        scenario.print();
     }
 }
 
