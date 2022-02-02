@@ -54,6 +54,10 @@ public class Filmtest {
         scene1.print();
         System.out.println("Opdracht C");
         scenario.print();
+
+        System.out.println("\nOpdracht D");
+        film.print();
+
     }
 }
 

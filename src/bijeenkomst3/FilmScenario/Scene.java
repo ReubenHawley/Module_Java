@@ -26,7 +26,7 @@ public class Scene {
 
     public void print() {
         try {
-            System.out.println(" --- " + beschrijving + " ---");
+            System.out.println(" --- " + beschrijving +" ("+ tijd+") ---");
             for (Actie actie : acties) {
                 actie.print();
             }

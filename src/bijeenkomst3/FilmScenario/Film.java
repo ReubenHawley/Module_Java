@@ -20,4 +20,14 @@ public class Film {
     public void setScenario(Scenario scenario) {
         this.scenario = scenario;
     }
+    public void print(){
+        System.out.println('\"'+titel+'\"');
+        System.out.println("----------------------");
+        System.out.println("Een film met:");
+        for (Acteur acteur : acteurs) {
+            acteur.print();
+        }
+        System.out.println("\n*** Scenario ***");
+        scenario.print();
+    }
 }

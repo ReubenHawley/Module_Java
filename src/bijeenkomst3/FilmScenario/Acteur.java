@@ -9,4 +9,7 @@ public class Acteur {
         this.naam = naam;
         this.rol = rol;
     }
+    public void print(){
+        System.out.println(naam +" als "+ rol.getNaam());
+    }
 }
