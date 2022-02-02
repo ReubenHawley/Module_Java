@@ -70,6 +70,8 @@ public class Filmtest {
         System.out.println(scenario.zoekLangsteScene());
         System.out.println(scenario.zoeksceneMetMeesteActies());
 
+        System.out.println(film.zoekActeurMetMeesteActies());
+
     }
 }
 

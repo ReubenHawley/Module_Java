@@ -12,6 +12,10 @@ public class Scene {
         return tijd;
     }
 
+    public ArrayList<Actie> getActies() {
+        return acties;
+    }
+
     public Scene(String beschrijving, int tijd) {
         this.beschrijving = beschrijving;
         this.tijd = tijd;
@@ -75,6 +79,5 @@ public class Scene {
         }
         return count;
     }
-
 
 }

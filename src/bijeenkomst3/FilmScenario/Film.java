@@ -20,8 +20,9 @@ public class Film {
     public void setScenario(Scenario scenario) {
         this.scenario = scenario;
     }
-    public void print(){
-        System.out.println('\"'+titel+'\"'+'('+scenario.berekenTotaleTijd()+" min.)");
+
+    public void print() {
+        System.out.println('\"' + titel + '\"' + '(' + scenario.berekenTotaleTijd() + " min.)");
         System.out.println("----------------------");
         System.out.println("Een film met:");
         for (Acteur acteur : acteurs) {
@@ -30,4 +31,16 @@ public class Film {
         System.out.println("\n*** Scenario ***");
         scenario.print();
     }
+
+    public Acteur zoekActeurMetMeesteActies() {
+        Acteur meeste = null;
+        Rol rol = scenario.getMeesteActies();
+        for (Acteur acteur : acteurs) {
+            if (acteur.getRol()==rol){
+                meeste = acteur;
+            }
+        }
+        return meeste;
+    }
+
 }

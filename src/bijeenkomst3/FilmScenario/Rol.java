@@ -13,5 +13,10 @@ public class Rol {
     public String getNaam() {
         return naam;
     }
+
+    @Override
+    public String toString() {
+        return  naam;
+    }
 }
 

@@ -80,4 +80,26 @@ public class Scenario {
         return langste;
     }
 
+    public Rol getMeesteActies() {
+        Rol meeste = null;
+        int aantal = 0;
+        ArrayList<Rol> rollen = new ArrayList<>();
+        for (Scene scene : scenes) {
+            for (Actie actie : scene.getActies()) {
+                if (!rollen.contains(actie.getRol())){
+                    rollen.add(actie.getRol());
+                }
+            }
+            for (int i =0; i<rollen.size();i++) {
+                if (i==0){
+                    meeste = rollen.get(i);
+                }else{
+                    if(scene.telAantalActiesVanRol(rollen.get(i))> aantal){
+                        meeste = rollen.get(i);
+                    }
+                }
+            }
+        }
+        return meeste;
+    }
 }

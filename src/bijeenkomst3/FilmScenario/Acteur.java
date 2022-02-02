@@ -12,4 +12,13 @@ public class Acteur {
     public void print(){
         System.out.println(naam +" als "+ rol.getNaam());
     }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    @Override
+    public String toString() {
+        return naam + " als " + rol;
+    }
 }
