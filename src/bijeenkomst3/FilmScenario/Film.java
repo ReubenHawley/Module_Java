@@ -21,7 +21,7 @@ public class Film {
         this.scenario = scenario;
     }
     public void print(){
-        System.out.println('\"'+titel+'\"');
+        System.out.println('\"'+titel+'\"'+'('+scenario.berekenTotaleTijd()+" min.)");
         System.out.println("----------------------");
         System.out.println("Een film met:");
         for (Acteur acteur : acteurs) {

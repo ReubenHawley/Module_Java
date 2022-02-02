@@ -8,6 +8,10 @@ public class Scene {
     private ArrayList<Actie> acties;
     private int tijd;
 
+    public int getTijd() {
+        return tijd;
+    }
+
     public Scene(String beschrijving, int tijd) {
         this.beschrijving = beschrijving;
         this.tijd = tijd;

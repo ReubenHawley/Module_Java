@@ -26,5 +26,12 @@ public class Scenario {
             System.out.println("Actie array is empty");
         }
     }
+    public int berekenTotaleTijd(){
+        int sum =0;
+        for (Scene scene:scenes) {
+            sum += scene.getTijd();
+        }
+        return sum;
+    }
 
 }
