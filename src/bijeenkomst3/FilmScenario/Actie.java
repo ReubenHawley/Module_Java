@@ -24,4 +24,12 @@ public class Actie {
             System.out.println(rol.getNaam() +" ("+ gedrag +") " + '\"'+tekst+'\"');
         }
     }
+
+    public String getGedrag() {
+        return gedrag;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
 }

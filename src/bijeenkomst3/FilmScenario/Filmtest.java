@@ -57,6 +57,18 @@ public class Filmtest {
 
         System.out.println("\nOpdracht D");
         film.print();
+        System.out.println("\nOpdracht E");
+        film.print();
+
+        System.out.println("\nOpdracht F");
+        System.out.println(scene1.telAantalActies());
+        System.out.println(scene1.telAantalActiesMetGedrag());
+        System.out.println(scene1.telAantalActiesVanRol(mevrouwDeKort));
+        System.out.println(scene1.telAantalActiesVanRolMetGedrag(mevrouwDeKort));
+        System.out.println(scenario.telAantalActies());
+        System.out.println(scenario.telAantalActiesMetGedrag());
+        System.out.println(scenario.zoekLangsteScene());
+        System.out.println(scenario.zoeksceneMetMeesteActies());
 
     }
 }

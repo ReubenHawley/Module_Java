@@ -30,7 +30,7 @@ public class Scene {
 
     public void print() {
         try {
-            System.out.println(" --- " + beschrijving +" ("+ tijd+") ---");
+            System.out.println(" --- " + beschrijving + " (" + tijd + ") ---");
             for (Actie actie : acties) {
                 actie.print();
             }
@@ -38,4 +38,43 @@ public class Scene {
             System.out.println("Actie array is empty");
         }
     }
+
+    public int telAantalActies() {
+        return acties.size();
+    }
+
+    public int telAantalActiesMetGedrag() {
+        int count = 0;
+        for (Actie actie :
+                acties) {
+            if (actie.getGedrag() != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int telAantalActiesVanRol(Rol rol) {
+        int count = 0;
+        for (Actie actie : acties) {
+            if (actie.getRol() == rol) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int telAantalActiesVanRolMetGedrag(Rol rol) {
+        int count = 0;
+        for (Actie actie : acties) {
+            if (actie.getGedrag() != null) {
+                if (actie.getRol() == rol) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+
 }
