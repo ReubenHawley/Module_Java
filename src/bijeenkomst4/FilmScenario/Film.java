@@ -7,6 +7,7 @@ public class Film {
     private String titel;
     private Scenario scenario;
     private ArrayList<Persoon> personen;
+    private int draaidagen;
 
     public Film(String titel) {
         this.titel = titel;
@@ -42,16 +43,13 @@ public class Film {
         System.out.println("\n*** Scenario ***");
         scenario.print();
     }
-//
-//    public Acteur zoekActeurMetMeesteActies() {
-//        Acteur meeste = null;
-//        Rol rol = scenario.getMeesteActies();
-//        for (Persoon acteur : personen) {
-//            if (acteur.getRol()==rol){
-//                meeste = acteur;
-//            }
-//        }
-//        return meeste;
-//    }
+
+    public double totaleKosten() {
+        double totaleKosten = 0;
+        for (Persoon persoon : personen) {
+            totaleKosten += persoon.berekenBeloning(draaidagen);
+        }
+        return totaleKosten;
+    }
 
 }

@@ -12,16 +12,9 @@ public class Filmtest {
         Rol meneerVanLoon = new Rol("Meneer van Loon", "vriendelijke meneer");
         Rol conducteur = new Rol("Conducteur", "norse conducteur");
 
-        Acteur dWinterland = new Acteur("Dagmar Winterland",
-                LocalDate.of(1976, 1, 13),
-                "Vrouw",
-                mevrouwDeKort);
-        Acteur hDrissi = new Acteur("Haroen Drissi",
-                LocalDate.of(1982, 9, 13),
-                "Man", meneerVanLoon);
-        Acteur hGerards = new Acteur("Hubert Gerards",
-                LocalDate.of(1982, 9, 13),
-                "Man", conducteur);
+        Acteur dWinterland = new Acteur("Dagmar Winterland", LocalDate.of(1990, 02, 12), "m", mevrouwDeKort, 500.0, 100.5);
+        Acteur hDrissi = new Acteur("Haroen Drissi", LocalDate.of(1988, 02, 12), "v", meneerVanLoon, 500.0, 95.0);
+        Acteur hGerards = new Acteur("Hubert Gerards", LocalDate.of(1960, 06, 22), "m", conducteur, 150.0, 150.0);
 
         film.voegActeurToe(dWinterland);
         film.voegActeurToe(hDrissi);

@@ -6,12 +6,16 @@ public abstract class Persoon {
     protected String naam;
     protected LocalDate geboortedatum;
     protected String sexe;
+    protected double dagelijksBeloning;
 
-    public Persoon(String naam, LocalDate geboortedatum, String sexe) {
+    public Persoon(String naam, LocalDate geboortedatum, String sexe,double dagelijksBeloning) {
         this.naam = naam;
         this.geboortedatum = geboortedatum;
         this.sexe = sexe;
+        this.dagelijksBeloning = dagelijksBeloning;
     }
+
+    public abstract  double berekenBeloning(int draaidagen);
 
     public String getSexe() {
         return this.sexe;
