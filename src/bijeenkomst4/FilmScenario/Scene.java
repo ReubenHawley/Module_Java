@@ -1,4 +1,4 @@
-package bijeenkomst3.FilmScenario;
+package bijeenkomst4.FilmScenario;
 
 import java.util.ArrayList;
 

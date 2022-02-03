@@ -1,4 +1,6 @@
-package bijeenkomst3.FilmScenario;
+package bijeenkomst4.FilmScenario;
+
+import java.time.LocalDate;
 
 public class Filmtest {
 
@@ -10,9 +12,16 @@ public class Filmtest {
         Rol meneerVanLoon = new Rol("Meneer van Loon", "vriendelijke meneer");
         Rol conducteur = new Rol("Conducteur", "norse conducteur");
 
-        Acteur dWinterland = new Acteur("Dagmar Winterland", mevrouwDeKort);
-        Acteur hDrissi = new Acteur("Haroen Drissi", meneerVanLoon);
-        Acteur hGerards = new Acteur("Hubert Gerards", conducteur);
+        Acteur dWinterland = new Acteur("Dagmar Winterland",
+                LocalDate.of(1976, 1, 13),
+                "Vrouw",
+                mevrouwDeKort);
+        Acteur hDrissi = new Acteur("Haroen Drissi",
+                LocalDate.of(1982, 9, 13),
+                "Man", meneerVanLoon);
+        Acteur hGerards = new Acteur("Hubert Gerards",
+                LocalDate.of(1982, 9, 13),
+                "Man", conducteur);
 
         film.voegActeurToe(dWinterland);
         film.voegActeurToe(hDrissi);
@@ -70,8 +79,7 @@ public class Filmtest {
         System.out.println(scenario.zoekLangsteScene());
         System.out.println(scenario.zoeksceneMetMeesteActies());
 
-        System.out.println(film.zoekActeurMetMeesteActies());
-
+//        System.out.println(film.zoekActeurMetMeesteActies());
     }
 }
 
