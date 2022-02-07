@@ -38,19 +38,12 @@ public class Program {
             System.out.println("3) Besteloverzicht printen");
             int i = input.nextInt(); // getting an integer
             if (i == 1) {
-                try {
-                    String klas = getKlasVoorBestelling();
-                    String locatie = getLocatieVoorBestelling();
-                    String tijd = getTijdVoorBestelling();
-                    Bestelling bestelling = new Bestelling(locatie, tijd, klas);
-                }catch(ArrayIndexOutOfBoundsException e){
-                    System.out.println();
-                }finally{
-                    String klas = getKlasVoorBestelling();
-                    String locatie = getLocatieVoorBestelling();
-                    String tijd = getTijdVoorBestelling();
-                    Bestelling bestelling = new Bestelling(locatie, tijd, klas);
-                }
+                String klas = getKlasVoorBestelling();
+                String locatie = getLocatieVoorBestelling();
+                String tijd = getTijdVoorBestelling();
+                Bestelling bestelling = new Bestelling(locatie, tijd, klas);
+                addBestelling(bestelling);
+
                 addBestelling(bestelling);
                 boolean bestellen = true;
                 while (bestellen) {
@@ -161,14 +154,15 @@ public class Program {
         return new BestellingItem(product, aantalProducten);
     }
 
-    private static String print(String[] regels) throws IndexOutOfBoundsException, ArrayIndexOutOfBoundsException {
+    private static String print(String[] regels) throws ArrayIndexOutOfBoundsException {
         for (String regel : regels) {
             System.out.println(regel);
         }
 
         int i = input.nextInt();
 
-        if (i < 1 || i > regels.length - 1) throw new ArrayIndexOutOfBoundsException(String.format("Ongeldige keuze. Keuze moet liggen tussen 1 en %d", regels.length - 1));
+        if (i < 1 || i > regels.length - 1)
+            throw new ArrayIndexOutOfBoundsException(String.format("Ongeldige keuze. Keuze moet liggen tussen 1 en %d", regels.length - 1));
         else {
             String waarde = regels[i].substring(regels[i].indexOf(' ') + 1);
             return waarde;
