@@ -17,10 +17,13 @@ public class GuiApplicatie extends JFrame {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
 
+        Dimension d = new Dimension(50, 50);
+
         JLabel oost = new JLabel("oost");
         oost.setOpaque(true);
         oost.setBackground(Color.RED); // import java.awt.Color;
 //        oost.setBounds(40, 80, 30, 80);
+        oost.setPreferredSize(d);
         window.add(oost);
 
         JLabel west = new JLabel("west");
@@ -28,6 +31,13 @@ public class GuiApplicatie extends JFrame {
         west.setBackground(Color.CYAN); // import java.awt.Color;
 //        west.setBounds(10, 80, 30, 80);
         window.add(west);
+
+        JLabel centrum = new JLabel("centrum");
+        centrum.setOpaque(true);
+        centrum.setBackground(Color.ORANGE); // import java.awt.Color;
+//        oost.setBounds(40, 80, 30, 80);
+        centrum.setPreferredSize(d);
+        window.add(centrum);
 
         JLabel noord = new JLabel("noord");
         noord.setOpaque(true);
