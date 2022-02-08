@@ -12,11 +12,12 @@ public class Wisselkoers {
     }
 
     public double munt1NaarMunt2(double bedrag) {
-        return bedrag;
+        System.out.println(bedrag*koers);
+        return bedrag*koers;
     }
 
     public double munt2NaarMunt1(double bedrag) {
-        return bedrag;
+        return bedrag/koers;
     }
 
     public Munt getMunt1() {
