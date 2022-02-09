@@ -5,9 +5,11 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-public class BordGUI extends JFrame implements ActionListener {
+public class BordGUI extends JFrame implements MouseListener {
     private JFrame window;
     private JButton submit;
     private final JTextField coordinateX;
@@ -23,6 +25,7 @@ public class BordGUI extends JFrame implements ActionListener {
     private JPanel square9;
 
     BordGUI() {
+
         // create window
         window = new JFrame();
         window.setBounds(0, 0, 600, 600);
@@ -40,55 +43,63 @@ public class BordGUI extends JFrame implements ActionListener {
         square1.setBackground(Color.blue);
         square1.setBorder(border);
         square1.setVisible(true);
+        square1.addMouseListener(this);
 
         square2 = new JPanel();
         square2.setPreferredSize(d);
         square2.setBackground(Color.blue);
         square2.setBorder(border);
         square2.setVisible(true);
+        square2.addMouseListener(this);
 
         square3 = new JPanel();
         square3.setPreferredSize(d);
         square3.setBackground(Color.blue);
         square3.setBorder(border);
         square3.setVisible(true);
+        square3.addMouseListener(this);
 
         square4 = new JPanel();
         square4.setPreferredSize(d);
         square4.setBackground(Color.blue);
         square4.setBorder(border);
         square4.setVisible(true);
+        square4.addMouseListener(this);
 
         square5 = new JPanel();
         square5.setPreferredSize(d);
         square5.setBackground(Color.blue);
         square5.setBorder(border);
         square5.setVisible(true);
+        square5.addMouseListener(this);
 
         square6 = new JPanel();
         square6.setPreferredSize(d);
         square6.setBackground(Color.blue);
         square6.setBorder(border);
         square6.setVisible(true);
+        square6.addMouseListener(this);
 
         square7 = new JPanel();
         square7.setPreferredSize(d);
         square7.setBackground(Color.blue);
         square7.setBorder(border);
         square7.setVisible(true);
+        square7.addMouseListener(this);
 
         square8 = new JPanel();
         square8.setPreferredSize(d);
         square8.setBackground(Color.blue);
         square8.setBorder(border);
         square8.setVisible(true);
+        square8.addMouseListener(this);
 
         square9 = new JPanel();
         square9.setPreferredSize(d);
         square9.setBackground(Color.blue);
         square9.setBorder(border);
         square9.setVisible(true);
-
+        square9.addMouseListener(this);
         //create grid for placement in the window
         JPanel grid = new JPanel();
         grid.setBounds(10, 10, 450, 450);
@@ -135,7 +146,7 @@ public class BordGUI extends JFrame implements ActionListener {
         submit.setBounds(0, 0, 100, 30);
         submit.setBorder(border);
         submitPanel.add(submit);
-        submit.addActionListener(this);
+
 
         inputPanel.add(inputFields, BorderLayout.WEST);
         inputPanel.add(submitPanel, BorderLayout.EAST);
@@ -145,30 +156,66 @@ public class BordGUI extends JFrame implements ActionListener {
         window.add(inputPanel, BorderLayout.SOUTH);
     }
 
+
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == submit) {
-            int x = Integer.parseInt(coordinateX.getText());
-            int y = Integer.parseInt(coordinateY.getText());
-            if (x == 1 && y == 1) {
-                square1.setBackground(Color.RED);
-            }else if (x == 2 && y == 1) {
-                square2.setBackground(Color.RED);
-            }else if (x == 3 && y == 1) {
-                square3.setBackground(Color.RED);
-            }else if (x == 1 && y == 2) {
-                square4.setBackground(Color.RED);
-            }else if (x == 2 && y == 2) {
-                square5.setBackground(Color.RED);
-            }else if (x == 3 && y == 2) {
-                square6.setBackground(Color.RED);
-            }else if (x == 1 && y == 3) {
-                square7.setBackground(Color.RED);
-            }else if (x == 2 && y == 3) {
-                square8.setBackground(Color.RED);
-            }else if (x == 3 && y == 3) {
-                square9.setBackground(Color.RED);
-            }
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        if (e.getSource() == square1) {
+            square1.setBackground(Color.RED);
+        } else if (e.getSource() == square2) {
+            square2.setBackground(Color.RED);
+        } else if (e.getSource() == square3) {
+            square3.setBackground(Color.RED);
+        } else if (e.getSource() == square4) {
+            square4.setBackground(Color.RED);
+        } else if (e.getSource() == square5) {
+            square5.setBackground(Color.RED);
+        } else if (e.getSource() == square6) {
+            square6.setBackground(Color.RED);
+        } else if (e.getSource() == square7) {
+            square7.setBackground(Color.RED);
+        } else if (e.getSource() == square8) {
+            square8.setBackground(Color.RED);
+        } else if (e.getSource() == square9) {
+            square9.setBackground(Color.RED);
         }
+    }
+
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        if (e.getSource() == square1) {
+            square1.setBackground(Color.blue);
+        } else if (e.getSource() == square2) {
+            square2.setBackground(Color.blue);
+        } else if (e.getSource() == square3) {
+            square3.setBackground(Color.blue);
+        } else if (e.getSource() == square4) {
+            square4.setBackground(Color.blue);
+        } else if (e.getSource() == square5) {
+            square5.setBackground(Color.blue);
+        } else if (e.getSource() == square6) {
+            square6.setBackground(Color.blue);
+        } else if (e.getSource() == square7) {
+            square7.setBackground(Color.blue);
+        } else if (e.getSource() == square8) {
+            square8.setBackground(Color.blue);
+        } else if (e.getSource() == square9) {
+            square9.setBackground(Color.blue);
+        }
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }
