@@ -3,9 +3,24 @@ package bijeenkomst5.HackersEdition;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-public class BordGUI extends JFrame {
-    JFrame window;
+public class BordGUI extends JFrame implements ActionListener {
+    private JFrame window;
+    private JButton submit;
+    private final JTextField coordinateX;
+    private final JTextField coordinateY;
+    private JPanel square1;
+    private JPanel square2;
+    private JPanel square3;
+    private JPanel square4;
+    private JPanel square5;
+    private JPanel square6;
+    private JPanel square7;
+    private JPanel square8;
+    private JPanel square9;
 
     BordGUI() {
         // create window
@@ -20,55 +35,55 @@ public class BordGUI extends JFrame {
         Dimension d = new Dimension(30, 30);
         Border border = BorderFactory.createLineBorder(new Color(50, 50, 255), 3);
 
-        JPanel square1 = new JPanel();
+        square1 = new JPanel();
         square1.setPreferredSize(d);
         square1.setBackground(Color.blue);
         square1.setBorder(border);
         square1.setVisible(true);
 
-        JPanel square2 = new JPanel();
+        square2 = new JPanel();
         square2.setPreferredSize(d);
         square2.setBackground(Color.blue);
         square2.setBorder(border);
         square2.setVisible(true);
 
-        JPanel square3 = new JPanel();
+        square3 = new JPanel();
         square3.setPreferredSize(d);
         square3.setBackground(Color.blue);
         square3.setBorder(border);
         square3.setVisible(true);
 
-        JPanel square4 = new JPanel();
+        square4 = new JPanel();
         square4.setPreferredSize(d);
         square4.setBackground(Color.blue);
         square4.setBorder(border);
         square4.setVisible(true);
 
-        JPanel square5 = new JPanel();
+        square5 = new JPanel();
         square5.setPreferredSize(d);
         square5.setBackground(Color.blue);
         square5.setBorder(border);
         square5.setVisible(true);
 
-        JPanel square6 = new JPanel();
+        square6 = new JPanel();
         square6.setPreferredSize(d);
-        square6.setBackground(Color.RED);
+        square6.setBackground(Color.blue);
         square6.setBorder(border);
         square6.setVisible(true);
 
-        JPanel square7 = new JPanel();
+        square7 = new JPanel();
         square7.setPreferredSize(d);
         square7.setBackground(Color.blue);
         square7.setBorder(border);
         square7.setVisible(true);
 
-        JPanel square8 = new JPanel();
+        square8 = new JPanel();
         square8.setPreferredSize(d);
         square8.setBackground(Color.blue);
         square8.setBorder(border);
         square8.setVisible(true);
 
-        JPanel square9 = new JPanel();
+        square9 = new JPanel();
         square9.setPreferredSize(d);
         square9.setBackground(Color.blue);
         square9.setBorder(border);
@@ -90,38 +105,70 @@ public class BordGUI extends JFrame {
 
         //create input fields and button
         JPanel inputPanel = new JPanel();
-        inputPanel.setBounds(0,460,140,140);
+        inputPanel.setBounds(0, 460, 400, 140);
         inputPanel.setLayout(new BorderLayout());
         inputPanel.setVisible(true);
 
         JPanel inputFields = new JPanel();
-        inputFields.setBounds(0,0,100,140);
+        inputFields.setBounds(0, 0, 100, 140);
         inputFields.setLayout(new FlowLayout());
         inputFields.setVisible(true);
 
-        Dimension d2 = new Dimension(45,30);
+        Dimension d2 = new Dimension(60, 30);
 
-        JTextField coordinateX = new JTextField();
+        coordinateX = new JTextField();
         coordinateX.setBorder(border);
         coordinateX.setPreferredSize(d2);
         inputFields.add(coordinateX);
 
-        JTextField coordinateY = new JTextField();
+        coordinateY = new JTextField();
         coordinateY.setBorder(border);
         coordinateY.setPreferredSize(d2);
         inputFields.add(coordinateY);
 
-        JButton submit = new JButton("Kleur");
-        submit.setPreferredSize(d2);
-        submit.setBorder(border);
+        JPanel submitPanel = new JPanel();
+        submitPanel.setBounds(0, 0, 100, 140);
+        submitPanel.setLayout(new FlowLayout());
+        submitPanel.setVisible(true);
 
-        inputPanel.add(inputFields,BorderLayout.WEST);
-        inputPanel.add(submit,BorderLayout.EAST);
+        submit = new JButton("Kleur");
+        submit.setBounds(0, 0, 100, 30);
+        submit.setBorder(border);
+        submitPanel.add(submit);
+        submit.addActionListener(this);
+
+        inputPanel.add(inputFields, BorderLayout.WEST);
+        inputPanel.add(submitPanel, BorderLayout.EAST);
 
 
         window.add(grid, BorderLayout.NORTH);
-        window.add(inputPanel,BorderLayout.SOUTH);
+        window.add(inputPanel, BorderLayout.SOUTH);
+    }
 
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == submit) {
+            int x = Integer.parseInt(coordinateX.getText());
+            int y = Integer.parseInt(coordinateY.getText());
+            if (x == 1 && y == 1) {
+                square1.setBackground(Color.RED);
+            }else if (x == 2 && y == 1) {
+                square2.setBackground(Color.RED);
+            }else if (x == 3 && y == 1) {
+                square3.setBackground(Color.RED);
+            }else if (x == 1 && y == 2) {
+                square4.setBackground(Color.RED);
+            }else if (x == 2 && y == 2) {
+                square5.setBackground(Color.RED);
+            }else if (x == 3 && y == 2) {
+                square6.setBackground(Color.RED);
+            }else if (x == 1 && y == 3) {
+                square7.setBackground(Color.RED);
+            }else if (x == 2 && y == 3) {
+                square8.setBackground(Color.RED);
+            }else if (x == 3 && y == 3) {
+                square9.setBackground(Color.RED);
+            }
+        }
     }
 }
